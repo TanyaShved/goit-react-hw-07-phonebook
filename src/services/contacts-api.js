@@ -8,11 +8,13 @@ export async function fetchContacts() {
 }
 
 export async function addContact(contact) {
-    return await axios.post(`${BASE_URL}/contacts`, contact);
+    const { data } = await axios.post(`${BASE_URL}/contacts`, contact);
+    return data;
 };
 
 export async function deleteContact(id) {
-    return await axios.delete(`${BASE_URL}/contacts/${id}`)
+    const { data } = await axios.delete(`${BASE_URL}/contacts/${id}`);
+    return data;
 };
 
 const contactApi = { fetchContacts, addContact, deleteContact };

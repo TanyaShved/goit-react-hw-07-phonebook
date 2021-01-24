@@ -24,7 +24,7 @@ const Phonebook = ({ title }) => {
     return alert('Please fill in the required fields!');
     }
 
-    dispatch(contactsOperations.addContact(name, number));
+    dispatch(contactsOperations.addContact({name, number}));
     setName('');
     setNumber('');
   };
